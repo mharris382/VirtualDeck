@@ -9,32 +9,23 @@ using UniRx;
 
 public class DeckManager : MonoBehaviour
 {
+    public int drawAmount = 5;
+
+
+    [ChildGameObjectsOnly] [Required]  public Transform handParent;
+    [ChildGameObjectsOnly] [Required]  public Transform drawPileParent;
+    [ChildGameObjectsOnly] [Required]  public Transform discardPileParent;
+
+    
     public Deck deck;
     public GameManager gm;
 
-    public int drawAmount = 5;
-    
-    
- [ChildGameObjectsOnly] [Required]  public Transform handParent;
- [ChildGameObjectsOnly] [Required]  public Transform drawPileParent;
- [ChildGameObjectsOnly] [Required]  public Transform discardPileParent;
-
-
+    //created by self
     private DrawPile _draw;
     private Hand _hand;
     private DiscardPile _discard;
 
 
-    [HideInEditorMode]
-    [Button()]
-    public void NextTurn()
-    {
-        MessageBroker.Default.Publish(new NewTurnMessage());
-        for (int i = 0; i < drawAmount; i++)
-        {
-            TryDrawCard();
-        }
-    }
     private void Awake()
     {
         MessageBroker.Default.Receive<CardAddedToHandMessage>()
@@ -50,27 +41,50 @@ public class DeckManager : MonoBehaviour
         
     }
 
-    public void InitPiles()
+    public void NextTurn()
     {
-        _discard = new DiscardPile(discardPileParent);
-        _hand = new Hand(handParent, _discard);
-        _draw = new DrawPile(drawPileParent, _discard, _hand);
+        MessageBroker.Default.Publish(new NewTurnMessage());
+        for (int i = 0; i < drawAmount; i++)
+        {
+            TryDrawCard();
+        }
     }
+
 
     public void InitializeDeck(GameManager gameManager)
     {
+        void InitPiles()
+        {
+            _discard = new DiscardPile(discardPileParent);
+            _hand = new Hand(handParent, _discard);
+            _draw = new DrawPile(drawPileParent, _discard, _hand);
+        }
+        
         this.gm = gameManager;
         InitPiles();
         deck.InitGameDeck(gm);
         for (int i = 0; i < deck.Cards.Count; i++)
         {
-            var instance = CreateInstanceOfCardAtIndex(i);
+            var instance = new CardInstance.Factory(this.deck).CreateCardInstance(i);
             _discard.Add(instance);
         }
     }
 
-    [HideInEditorMode]
-    [Button]
+    private event Action @event;
+
+    IEnumerator DoStuff()
+    {
+        void Foo()
+        {
+            //DOO STUFF
+        }
+
+        @event += Foo;
+        yield return new WaitForSeconds(5);
+        @event -= Foo;
+    }
+
+ 
     public void TryDrawCard()
     {
         if (_draw.Count == 0)
@@ -93,8 +107,7 @@ public class DeckManager : MonoBehaviour
         
     }
 
-    [HideInEditorMode]
-    [Button]
+
     public void DiscardHand()
     {
         List<CardInstance> cards = new List<CardInstance>();
@@ -116,89 +129,9 @@ public class DeckManager : MonoBehaviour
         }
     }
     
+
+
     
-    #region [Containers]
-
-    public class DrawPile : CardContainer
-    {
-        private readonly IList<CardInstance> discardPile;
-        private readonly IList<CardInstance> hand;
-
-        public DrawPile(Transform transform1, IList<CardInstance> discardPile , IList<CardInstance> hand) : base(transform1)
-        {
-            this.discardPile = discardPile;
-            this.hand = hand;
-        }
-
-
-        public void Shuffle()
-        {
-
-            for (int i = Count - 1; i >= 0; i--)
-            {
-                var indexRandom = UnityEngine.Random.Range(0, i);
-                var temp = this[i];
-                int prevIndex = temp.transform.GetSiblingIndex();
-                var prevCard = this[indexRandom];
-                temp.transform.SetSiblingIndex(indexRandom);
-                prevCard.transform.SetSiblingIndex(prevIndex);
-                
-            }
-        }
-
-        public override void Add(CardInstance item)
-        {
-            base.Add(item);
-        }
-    }
-    
-    public class DiscardPile : CardContainer
-    {
-        public DiscardPile(Transform transform1) : base(transform1)
-        {
-        }
-
-        public override bool Remove(CardInstance item)
-        {
-            Debug.Log($"Removed from the Discard {item.Card.name} Pile" );
-            return true;
-        }
-    }
-    
-    public class Hand : CardContainer
-    {
-        private readonly IList<CardInstance> discardPile;
-
-        public Hand(Transform transform1, IList<CardInstance> discardPile) : base(transform1)
-        {
-            this.discardPile = discardPile;
-        }
-
-       
-    }
-
-    public abstract class CardContainer : TransformAsList<CardInstance>
-    {
-        protected CardContainer(Transform transform1) : base(transform1)
-        {
-        }
-    }
-
-    #endregion
-
-    private CardInstance CreateInstanceOfCardAtIndex(int i)
-    {
-        var instance = new GameObject("Non-inited Card", typeof(CardInstance)).GetComponent<CardInstance>();
-        instance.InitializeInstance(deck, i);
-        return instance;
-    }
 }
 
-public enum DeckLocation
-{
-    DrawPile = 0,
-    DiscardPile = 1,
-    Hand = 2,
-    Graveyard = 3,
-    Equipped = 4
-}
+

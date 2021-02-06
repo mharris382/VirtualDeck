@@ -10,11 +10,30 @@ public class CardInstance : MonoBehaviour
 
     public Card Card => deck.Cards[indexInDeck];
 
-    public void InitializeInstance(Deck deck, int index)
+    public void Initialize(Deck deck, int index)
     {
         this.deck = deck;
         this.indexInDeck = index;
         inited = true;
         this.name = Card.name;
+    }
+    
+    
+    
+    public class Factory
+    {
+        private Deck deck;
+
+        public Factory(Deck deck)
+        {
+            this.deck = deck;
+        }
+    
+        public CardInstance CreateCardInstance(int i)
+        {
+            var instance = new GameObject("Non-inited Card", typeof(CardInstance)).GetComponent<CardInstance>();
+            instance.Initialize(deck, i);
+            return instance;
+        }
     }
 }
