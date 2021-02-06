@@ -5,8 +5,7 @@ using System.Linq;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
 using UniRx;
-using UnityEditor.VersionControl;
-using UnityEngine;
+ using UnityEngine;
 
 public class DeckManager : MonoBehaviour
 {
