@@ -5,6 +5,7 @@ using Controller;
 using Excel;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,8 +33,7 @@ public class GameManager : MonoBehaviour
 
     public DeckManager Deck;
 
-
-    private void Start()
+    public void StartGame()
     {
         if(loadOnStart)
             LoadCardsFromXml();

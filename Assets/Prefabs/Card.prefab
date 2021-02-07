@@ -66,6 +66,7 @@ MonoBehaviour:
   titleText: {fileID: 7952011160754466972}
   descriptionText: {fileID: 2606651973828648947}
   apText: {fileID: 2606651973165071447}
+  art: {fileID: 2945563330196549331}
   discardButton: {fileID: 3221785691947064958}
 --- !u!1 &2606651973165071445
 GameObject:

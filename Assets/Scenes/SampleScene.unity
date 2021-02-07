@@ -1112,12 +1112,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d918fdf9db224f9db3c85c4f2b290321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deck: {fileID: 11400000, guid: efef398c0c1a5134595844fff4de95a9, type: 2}
-  gm: {fileID: 1357618205}
   drawAmount: 5
   handParent: {fileID: 1627566616}
   drawPileParent: {fileID: 18337484}
   discardPileParent: {fileID: 1438494024}
+  deck: {fileID: 11400000, guid: efef398c0c1a5134595844fff4de95a9, type: 2}
+  gm: {fileID: 1357618205}
 --- !u!1 &864241141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,6 +1727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1357618206}
   - component: {fileID: 1357618205}
+  - component: {fileID: 1357618207}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -1747,8 +1748,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardLibraryPath: C:/Unity Projects/Virtual Deck/Assets/Cards.xlsx
-  deckFilePath: 
-  deckFileOutputPath: 
   cards:
   - _properties:
     - element: Title
@@ -1860,6 +1859,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1357618207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357618204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc3b454bdf344039ded8db0c960eac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallbackSprite:
+    m_AssetGUID: f83638dcf76f7d249b256ab575144486
+    m_SubObjectName: ghost-ally
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  artAssets:
+  - m_AssetGUID: 3d1d20d79d15e25418d1c3bd7f3c5c65
+    m_SubObjectName: half-heart
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - m_AssetGUID: f83638dcf76f7d249b256ab575144486
+    m_SubObjectName: ghost-ally
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - m_AssetGUID: fb0d6117057c61146b66e6c26b6d74fc
+    m_SubObjectName: stiletto
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - m_AssetGUID: 201872c2be2a0b54ca8781d299decf13
+    m_SubObjectName: fire-dash
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - m_AssetGUID: ac2548a690bfdec43b0fa75fea978ce6
+    m_SubObjectName: fire-breath
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - m_AssetGUID: 6628d0ad46234c5488cfc5dbc2d9564a
+    m_SubObjectName: fire-silhouette
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1438494023
 GameObject:
   m_ObjectHideFlags: 0
