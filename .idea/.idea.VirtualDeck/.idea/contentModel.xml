@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Unity Projects\VirtualDeck" t="IncludeRecursive">
+      <e p="Assets" t="Include">
+        <e p="Plugins" t="Include">
+          <e p="Sirenix" t="Include">
+            <e p="Odin Inspector" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Editor" t="Include">
+                  <e p="AssemblyImportSettingsAutomation.cs" t="Include" />
+                  <e p="BuildAOTAutomation.cs" t="Include" />
+                  <e p="EnsureOdinInspectorDefine.cs" t="Include" />
+                  <e p="FixBrokenUnityObjectWrapperDrawer.cs" t="Include" />
+                  <e p="Sirenix.OdinInspector.CompatibilityLayer.Editor.asmdef" t="Include" />
+                  <e p="SyncListDrawer.cs" t="Include" />
+                  <e p="SyncVarAttributeDrawer.cs" t="Include" />
+                  <e p="Vector2IntMinMaxAttributeDrawer.cs" t="Include" />
+                  <e p="VectorIntDrawers.cs" t="Include" />
+                  <e p="VectorIntPropertyResolvers.cs" t="Include" />
+                </e>
+                <e p="SerializedNetworkBehaviour.cs" t="Include" />
+                <e p="Sirenix.OdinInspector.CompatibilityLayer.asmdef" t="Include" />
+                <e p="VectorIntFormatters.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Controller" t="Include">
+            <e p="DeckManager.cs" t="Include" />
+            <e p="GameLoader.cs" t="Include" />
+            <e p="GameManager.cs" t="Include" />
+          </e>
+          <e p="Core" t="Include">
+            <e p="Game.Core.asmdef" t="Include" />
+            <e p="SingletonBase.cs" t="Include" />
+          </e>
+          <e p="Data" t="Include">
+            <e p="Card.cs" t="Include" />
+            <e p="CardContainers" t="Include">
+              <e p="CardContainer.cs" t="Include" />
+              <e p="DeckLocation.cs" t="Include" />
+              <e p="DiscardPile.cs" t="Include" />
+              <e p="DrawPile.cs" t="Include" />
+              <e p="Hand.cs" t="Include" />
+            </e>
+            <e p="CardProperty.cs" t="Include" />
+            <e p="Deck.cs" t="Include" />
+            <e p="DeckSave.cs" t="Include" />
+            <e p="DeckSaveCard.cs" t="Include" />
+            <e p="Elements.cs" t="Include" />
+            <e p="ExcelDatabaseParser.cs" t="Include" />
+            <e p="ExcelDeckLoader.cs" t="Include" />
+            <e p="ICardFactory.cs" t="Include" />
+            <e p="IDeckLoader.cs" t="Include" />
+          </e>
+          <e p="Game.asmdef" t="Include" />
+          <e p="Messages" t="Include">
+            <e p="CardAddedToHandMessage.cs" t="Include" />
+            <e p="CardPlayedMessage.cs" t="Include" />
+            <e p="DiscardMessage.cs" t="Include" />
+            <e p="NewTurnMessage.cs" t="Include" />
+            <e p="ReshuffledDeckMessage.cs" t="Include" />
+          </e>
+          <e p="Proxy" t="Include">
+            <e p="CardInstance.cs" t="Include" />
+          </e>
+          <e p="TestSituation.cs" t="Include" />
+          <e p="Utilities" t="Include">
+            <e p="CollectionExtensions.cs" t="Include" />
+            <e p="DictionaryExtensions.cs" t="Include" />
+            <e p="TransformAsList.cs" t="Include" />
+          </e>
+          <e p="View" t="Include">
+            <e p="CardView.cs" t="Include" />
+            <e p="PlayCardText.cs" t="Include" />
+            <e p="UIGameHistory.cs" t="Include" />
+            <e p="UIManager.cs" t="Include" />
+            <e p="UIPileCount.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Game.Core.csproj" t="IncludeRecursive" />
+      <e p="Game.csproj" t="IncludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Sirenix.OdinInspector.CompatibilityLayer.csproj" t="IncludeRecursive" />
+      <e p="Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj" t="IncludeRecursive" />
+      <e p="Temp\Bin" t="ExcludeRecursive" />
+      <e p="VirtualDeck.sln" t="IncludeFlat" />
+    </e>
+    <e p="C:\Users\Admin\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Admin\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_VirtualDeck.-1824287282.00" t="ExcludeRecursive" />
+  </component>
+</project>
