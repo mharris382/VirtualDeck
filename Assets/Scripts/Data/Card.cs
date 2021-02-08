@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 [System.Serializable]
 public class Card : IEquatable<Card>
@@ -12,8 +13,8 @@ public class Card : IEquatable<Card>
     public string description => propTable[Elements.Description].textValue;
 
     public int ap => propTable[Elements.AP].intValue;
-    
-    
+
+    public Sprite Art => propTable[Elements.Art].spriteValue; 
     
     public Card(CardProperty[] properties)
     {

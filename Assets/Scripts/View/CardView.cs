@@ -8,6 +8,7 @@ public class CardView : MonoBehaviour
     public TMPro.TextMeshProUGUI titleText;
     public TMPro.TextMeshProUGUI descriptionText;
     public TMPro.TextMeshProUGUI apText;
+    public UnityEngine.UI.Image art;
 
     public Button discardButton;
     
@@ -22,6 +23,15 @@ public class CardView : MonoBehaviour
         titleText.text = card.name;
         descriptionText.text = card.description;
         apText.text = card.ap.ToString();
+        try
+        {
+            art.sprite = card.Art;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 
 

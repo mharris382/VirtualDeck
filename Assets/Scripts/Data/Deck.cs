@@ -25,23 +25,7 @@ public class Deck : ScriptableObject
     [Button(ButtonSizes.Gigantic)]
     public void LoadDeckFromExcel()
     {
-        string xmlpath = excelPath;
-        var ws = Workbook.Worksheets(xmlpath).ToArray()[sheet];
-        int total = 0;
-        List<DeckSaveCard> cardSave = new List<DeckSaveCard>();
-        foreach (var row in ws.Rows)
-        {
-            string cardName = row.Cells[cardTitleColumn].Text;
-            int copies = (int)row.Cells[column].Amount;
-            cardSave.Add(new DeckSaveCard()
-            {
-                    cardName = cardName,
-                    countInDeck = copies
-            });
-            total += copies;
-        }    
-        Debug.Log("Total # of Cards in deck = " + total);
-        cardsInDeck = cardSave.ToArray();
+        cardsInDeck = new ExcelDeckLoader(sheet, column).LoadDeckFromSave(excelPath);
     }
 
     public void InitGameDeck(GameManager gm)
@@ -58,3 +42,5 @@ public class Deck : ScriptableObject
     }
     
 }
+
+
