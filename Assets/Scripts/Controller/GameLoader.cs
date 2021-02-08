@@ -19,6 +19,7 @@ public class GameLoader : SingletonBase<GameLoader>
 
     private Sprite _fallback;
     private Dictionary<string, List<Action<Sprite>>> onLoadCallbacks = new Dictionary<string, List<Action<Sprite>>>();
+    [ShowInInspector]
     private Dictionary<string, Sprite> loadedSprites = new Dictionary<string, Sprite>();
 
 
@@ -84,6 +85,7 @@ public class GameLoader : SingletonBase<GameLoader>
      {
           int finalCount = artAssets.Count;
           int currentCount = 0;
+          Debug.Log("Started Loading Art Assets!");
           foreach (var assetReference in artAssets)
           { 
               var str = assetReference.SubObjectName;
@@ -98,7 +100,16 @@ public class GameLoader : SingletonBase<GameLoader>
           {
               yield return null;
           }
-          
+
+          foreach (var kvp in onLoadCallbacks)
+          {
+              Sprite s = instance.loadedSprites.ContainsKey(kvp.Key) ? instance.loadedSprites[kvp.Key] : instance._fallback;
+              foreach (var action in kvp.Value) {
+                  action?.Invoke(s);
+              }
+          }
+          Debug.Log("Finished Loading Art Assets!");
+          loadingFinished = true;
           GetComponent<GameManager>().StartGame();
       }
 }

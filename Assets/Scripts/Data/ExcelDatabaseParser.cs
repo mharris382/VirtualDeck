@@ -68,7 +68,7 @@ namespace Controller
                 string elementName = property.element;
                 if (elements.elementTypes.ContainsKey(elementName) == false)
                 {
-                    
+                    Debug.LogError("Elements Doesn't contain property " + raw);
                 }
                 var type = elements.elementTypes[elementName];
                 switch (type)
@@ -80,7 +80,13 @@ namespace Controller
                         property.intValue = Int32.Parse(raw);
                         break;
                     case Elements.PropertyType.Sprite:
-                        throw new NotImplementedException();
+                        property.textValue = raw;
+                        property.spriteValue = GameLoader.GetLoadedSprite(raw);
+                        // var prop = property;
+                        // GameLoader.RegisterForAssetLoad(raw, sprite =>
+                        // {
+                        //     prop.spriteValue = sprite;
+                        // });
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();

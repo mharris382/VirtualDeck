@@ -23,6 +23,15 @@ public class CardView : MonoBehaviour
         titleText.text = card.name;
         descriptionText.text = card.description;
         apText.text = card.ap.ToString();
+        try
+        {
+            art.sprite = card.Art;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 
 

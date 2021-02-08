@@ -12,7 +12,8 @@ public class Elements
     {
             Title,
             Description,
-            AP
+            AP,
+            Art
     };
     
     

@@ -889,7 +889,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.000015258789}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &699739704
@@ -1527,7 +1527,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1146646635
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1545,8 +1545,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -842.01, y: 15}
-  m_SizeDelta: {x: 271.98, y: 30}
+  m_AnchoredPosition: {x: -570.03, y: 467}
+  m_SizeDelta: {x: 271.98, y: 65.264}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1146646636
 MonoBehaviour:
@@ -1747,7 +1747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7670644d0cade0c44bf0a0d5949749a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardLibraryPath: C:/Unity Projects/Virtual Deck/Assets/Cards.xlsx
+  cardLibraryPath: C:/Unity Projects/VirtualDeck/Assets/Cards.xlsx
   cards:
   - _properties:
     - element: Title
@@ -1843,7 +1843,7 @@ MonoBehaviour:
       textValue: 
       spriteValue: {fileID: 0}
   ui: {fileID: 1600009210}
-  loadOnStart: 0
+  loadOnStart: 1
   Deck: {fileID: 758397637}
 --- !u!4 &1357618206
 Transform:
@@ -1872,8 +1872,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallbackSprite:
-    m_AssetGUID: f83638dcf76f7d249b256ab575144486
-    m_SubObjectName: ghost-ally
+    m_AssetGUID: c255cb81e88836b43a9890dc19617787
+    m_SubObjectName: ART_FALLBACK
     m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   artAssets:
@@ -1899,6 +1899,46 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   - m_AssetGUID: 6628d0ad46234c5488cfc5dbc2d9564a
     m_SubObjectName: fire-silhouette
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - m_AssetGUID: c4b6c1e686ef5a54fbb5d52bc3a30ff9
+    m_SubObjectName: black-hand-shield
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - m_AssetGUID: 5da8db223e64b0846997e6e2dc3cb05e
+    m_SubObjectName: gooey-molecule
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - m_AssetGUID: feccbd339b6d58841b17b65f2782810c
+    m_SubObjectName: hypersonic-melon
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - m_AssetGUID: bdf95798c03f2a744a61fd7fa03a45f4
+    m_SubObjectName: spider-mask
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - m_AssetGUID: 601d3ae46287b564da35b8952f23d242
+    m_SubObjectName: strawberry
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - m_AssetGUID: 02ccd4b1aa92e584fa534a271fa92eef
+    m_SubObjectName: vomiting
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - m_AssetGUID: 4ed88183a7357b644bb6d4b2147bfab1
+    m_SubObjectName: peach
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - m_AssetGUID: 15b0b594bf7b3bd42b5ecd35296048c2
+    m_SubObjectName: slalom
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - m_AssetGUID: 8641cd27baccfe3408298cbb05a11514
+    m_SubObjectName: raspberry
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - m_AssetGUID: 5e927927fb396ce49bffeea0206c3331
+    m_SubObjectName: skull-staff
     m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1438494023
