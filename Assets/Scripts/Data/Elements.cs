@@ -6,17 +6,28 @@ public class Elements
     public const string Description = "Description";
     public const string AP = "AP";
     public const string Art = "Art";
-    
-    
-    public string[] elementNames = new[]
-    {
-            Title,
-            Description,
-            AP,
+    public const string CardType = "CardType";
+
+
+    public string[] elementNames { get; private set; }
+
+    public readonly Dictionary<string, PropertyType> elementTypes;
+
+    private readonly string[] textElementNames = new[] {
+        Title,
+        Description,
+        CardType
+    };
+
+    private readonly string[] intElementNames = new[] {
+            AP
+    };
+
+    private readonly string[] spriteElementNames = new[] {
             Art
     };
-    
-    
+
+
     public enum PropertyType
     {
         Text,
@@ -24,17 +35,34 @@ public class Elements
         Sprite
     }
 
-  
-
-    public Dictionary<string, PropertyType> elementTypes;
-
 
     public Elements()
     {
+        List<string> elts = new List<string>();
         elementTypes  = new Dictionary<string, PropertyType>();
-        elementTypes.Add(Title, PropertyType.Text);
-        elementTypes.Add(AP, PropertyType.Int);
-        elementTypes.Add(Description, PropertyType.Text);
-        elementTypes.Add(Art, PropertyType.Sprite);
+        foreach (var str in spriteElementNames)
+        {
+            elementTypes.Add(str, PropertyType.Sprite);
+            
+        }
+
+        foreach (var str in intElementNames)
+        {
+            elementTypes.Add(str, PropertyType.Int);
+            
+        }
+
+        foreach (var str in textElementNames)
+        {
+            elementTypes.Add(str, PropertyType.Sprite);
+            
+        }
+
+        this.elementNames = elts.ToArray();
+    }
+
+    public void SetProperties(string[] propertyRow)
+    {
+        this.elementNames = propertyRow;
     }
 }

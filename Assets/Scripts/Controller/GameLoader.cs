@@ -18,22 +18,14 @@ public class GameLoader : SingletonBase<GameLoader>
     private bool loadingFinished;
 
     private Sprite _fallback;
-    private Dictionary<string, List<Action<Sprite>>> onLoadCallbacks = new Dictionary<string, List<Action<Sprite>>>();
-    [ShowInInspector]
-    private Dictionary<string, Sprite> loadedSprites = new Dictionary<string, Sprite>();
+    private Dictionary<string, List<Action<Sprite>>> _onLoadCallbacks = new Dictionary<string, List<Action<Sprite>>>();
+    
+    
+    [ShowInInspector] private Dictionary<string, Sprite> loadedSprites = new Dictionary<string, Sprite>();
 
 
-    [Button(), GUIColor(1, 0, 1)]
-    public void Test()
-    {
-        foreach (var assetReference in artAssets)
-        {
-            string s = "";
-            s += "SubObjectName=" + assetReference.SubObjectName;
-            s += "\nAssetGUID=" + assetReference.AssetGUID;
-            Debug.Log(s);
-        }
-    }
+    
+    
 
     public static void RegisterForAssetLoad(string asset, Action<Sprite> callback)
     {
@@ -43,8 +35,8 @@ public class GameLoader : SingletonBase<GameLoader>
         }
         else
         {
-            instance.onLoadCallbacks.AddOrReplace(asset, new List<Action<Sprite>>());
-            instance.onLoadCallbacks[asset].Add(callback);
+            instance._onLoadCallbacks.AddOrReplace(asset, new List<Action<Sprite>>());
+            instance._onLoadCallbacks[asset].Add(callback);
         }
     }
 
@@ -101,7 +93,7 @@ public class GameLoader : SingletonBase<GameLoader>
               yield return null;
           }
 
-          foreach (var kvp in onLoadCallbacks)
+          foreach (var kvp in _onLoadCallbacks)
           {
               Sprite s = instance.loadedSprites.ContainsKey(kvp.Key) ? instance.loadedSprites[kvp.Key] : instance._fallback;
               foreach (var action in kvp.Value) {

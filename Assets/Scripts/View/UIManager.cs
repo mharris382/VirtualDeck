@@ -4,6 +4,7 @@ using System.Linq;
 using Sirenix.OdinInspector;
 using UniRx;
 using UnityEngine;
+using View;
 
 public class UIManager : MonoBehaviour
 {

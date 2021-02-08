@@ -29,7 +29,7 @@ namespace Controller
             string xmlpath = cardLibraryPath;
             var ws = Workbook.Worksheets(xmlpath).First();
             string[] propertyRow = ws.Rows[0].Cells.Select(t => t.Text).ToArray();
-            
+            elements.SetProperties(propertyRow);
             List<Card> cerds = new List<Card>();
             for (int i = 1; i < ws.Rows.Length; i++)
             {
@@ -66,10 +66,12 @@ namespace Controller
             private void ReadProperty(Elements elements , string raw, ref CardProperty property)
             {
                 string elementName = property.element;
-                if (elements.elementTypes.ContainsKey(elementName) == false)
+                if (!elements.elementTypes.ContainsKey(elementName))
                 {
-                    Debug.LogError("Elements Doesn't contain property " + raw);
+                    Debug.LogError("Elements Doesn't contain property for element: " + elementName);
+                    return;
                 }
+                
                 var type = elements.elementTypes[elementName];
                 switch (type)
                 {
@@ -77,7 +79,15 @@ namespace Controller
                         property.textValue = raw;
                         break;
                     case Elements.PropertyType.Int:
-                        property.intValue = Int32.Parse(raw);
+                        try
+                        {
+                            property.intValue = Int32.Parse(raw);
+                        }
+                        catch (FormatException e)
+                        {
+                            Debug.LogError($"The int property {elementName} was not in the correct format: {raw}");
+                            return;
+                        }
                         break;
                     case Elements.PropertyType.Sprite:
                         property.textValue = raw;

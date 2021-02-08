@@ -9,32 +9,36 @@ using UnityEngine.AddressableAssets;
 
 public class GameManager : MonoBehaviour
 {
+    public DeckManager Deck;
+    
+    [Tooltip("If enabled the card library will be parsed from excel before the game is started")]
+    public bool loadOnStart;
+
+    [Tooltip("Absolute path to the excel file containing card data.  All cards should be on the first sheet, with the 1st row containing headers")]
     [FilePath(AbsolutePath = true, Extensions = "xlsx")]
     public string cardLibraryPath;
 
-    
-    
-    
-    private Elements elements = new Elements();
-
-
 
     public Card[] cards;
-
     public UIManager ui;
+    private Elements elements = new Elements();
+    private Dictionary<string, Card> cardTable;
 
-    public bool loadOnStart;
+
+
+
+
 
     
-    
-    
-    Dictionary<string, Card> cardTable = new Dictionary<string, Card>();
 
-
-    public DeckManager Deck;
+    private void Awake()
+    {
+        cardTable = new Dictionary<string, Card>();
+    }
 
     public void StartGame()
     {
+        
         if(loadOnStart)
             LoadCardsFromXml();
 
@@ -48,7 +52,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    [Button(ButtonSizes.Gigantic)]
+    
     public void LoadCardsFromXml()
     {
         this.cards = new ExcelDatabaseParser(cardLibraryPath).ParseCardDatabase();
