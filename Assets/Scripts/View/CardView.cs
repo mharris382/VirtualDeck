@@ -50,11 +50,16 @@ namespace View
                 MessageBroker.Default.Publish(new CardPlayedMessage(displayingCard));
                 MessageBroker.Default.Publish(new AddCardToDiscardPileMessage(displayingCard));
             });
-            destroyButton.onClick.AddListener(() =>
+            if (destroyButton)
             {
-                MessageBroker.Default.Publish(new CardPlayedMessage(displayingCard));
-                MessageBroker.Default.Publish(new AddCardToGraveyardMessage(displayingCard));
-            });
+                destroyButton.onClick.AddListener(() =>
+                {
+                    MessageBroker.Default.Publish(new CardPlayedMessage(displayingCard));
+                    MessageBroker.Default.Publish(new AddCardToGraveyardMessage(displayingCard));
+                });
+            }
+
+            
             
         }
     
