@@ -18,8 +18,8 @@ public class UIPileCount : MonoBehaviour
        var pubsub = MessageBroker.Default;
 
        Observable.Merge(
-       pubsub.Receive<CardAddedToHandMessage>().AsUnitObservable(),
-       pubsub.Receive<DiscardMessage>().AsUnitObservable(),
+       pubsub.Receive<AddCardToHandMessage>().AsUnitObservable(),
+       pubsub.Receive<AddCardToDiscardPileMessage>().AsUnitObservable(),
        pubsub.Receive<NewTurnMessage>().AsUnitObservable())
                .DelayFrame(1).Subscribe(_ => ReadPileCounts());
         

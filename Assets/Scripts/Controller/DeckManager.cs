@@ -15,7 +15,7 @@ public class DeckManager : MonoBehaviour
     [ChildGameObjectsOnly] [Required]  public Transform handParent;
     [ChildGameObjectsOnly] [Required]  public Transform drawPileParent;
     [ChildGameObjectsOnly] [Required]  public Transform discardPileParent;
-
+    [ChildGameObjectsOnly] [Required] public Transform gravehardParent;
     
     public Deck deck;
     public GameManager gm;
@@ -24,22 +24,7 @@ public class DeckManager : MonoBehaviour
     private DrawPile _draw;
     private Hand _hand;
     private DiscardPile _discard;
-
-
-    private void Awake()
-    {
-        MessageBroker.Default.Receive<CardAddedToHandMessage>()
-                .Where(_ => _hand != null).Subscribe(t =>
-                {
-                    _hand.Add(t.card);
-                });
-        MessageBroker.Default.Receive<DiscardMessage>()
-                .Where(_ => _discard != null).Subscribe(t =>
-                {
-                    _discard.Add(t.card);
-                });
-        
-    }
+    private Graveyard _graveyard;
 
     public void NextTurn()
     {
@@ -58,6 +43,11 @@ public class DeckManager : MonoBehaviour
             _discard = new DiscardPile(discardPileParent);
             _hand = new Hand(handParent, _discard);
             _draw = new DrawPile(drawPileParent, _discard, _hand);
+            _graveyard = new Graveyard(gravehardParent);
+            
+            MessageBroker.Default.Receive<AddCardToHandMessage>().Subscribe(t => { _hand.Add(t.card); });
+            MessageBroker.Default.Receive<AddCardToDiscardPileMessage>().Subscribe(t => { _discard.Add(t.card); });
+            MessageBroker.Default.Receive<AddCardToGraveyardMessage>().Subscribe(t => { _graveyard.Add(t.card);});
         }
         
         this.gm = gameManager;
@@ -103,7 +93,7 @@ public class DeckManager : MonoBehaviour
         _draw.RemoveAt(0);
         
         
-        MessageBroker.Default.Publish(new CardAddedToHandMessage(c));
+        MessageBroker.Default.Publish(new AddCardToHandMessage(c));
         
     }
 
@@ -125,7 +115,7 @@ public class DeckManager : MonoBehaviour
         foreach (var cardInstance in cards)
         {
             _hand.Remove(cardInstance);
-            MessageBroker.Default.Publish(new DiscardMessage(cardInstance));
+            MessageBroker.Default.Publish(new AddCardToDiscardPileMessage(cardInstance));
         }
     }
     

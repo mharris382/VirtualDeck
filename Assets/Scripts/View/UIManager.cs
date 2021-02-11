@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        MessageBroker.Default.Receive<CardAddedToHandMessage>().Subscribe(c =>
+        MessageBroker.Default.Receive<AddCardToHandMessage>().Subscribe(c =>
         {
             var card = c.card;
             var view = GetView(c.card);
@@ -34,7 +34,7 @@ public class UIManager : MonoBehaviour
             viewTables.AddOrReplace(card, view);
         });
 
-        MessageBroker.Default.Receive<DiscardMessage>().Subscribe(d =>
+        MessageBroker.Default.Receive<AddCardToDiscardPileMessage>().Subscribe(d =>
         {
             Debug.Log("UI Discard Message");
             if (viewTables.ContainsKey(d.card))

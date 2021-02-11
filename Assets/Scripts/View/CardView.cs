@@ -13,7 +13,7 @@ namespace View
         [Required, ChildGameObjectsOnly]  public TMPro.TextMeshProUGUI apText;
         [Required, ChildGameObjectsOnly]  public UnityEngine.UI.Image art;
         [Required, ChildGameObjectsOnly]  public Button discardButton;
-    
+        [Required, ChildGameObjectsOnly] public Button destroyButton;
         private CardInstance displayingCard;
         public Card Card => displayingCard.Card;
 
@@ -48,8 +48,14 @@ namespace View
             discardButton.onClick.AddListener(() =>
             {
                 MessageBroker.Default.Publish(new CardPlayedMessage(displayingCard));
-                MessageBroker.Default.Publish(new DiscardMessage(displayingCard));
+                MessageBroker.Default.Publish(new AddCardToDiscardPileMessage(displayingCard));
             });
+            destroyButton.onClick.AddListener(() =>
+            {
+                MessageBroker.Default.Publish(new CardPlayedMessage(displayingCard));
+                MessageBroker.Default.Publish(new AddCardToGraveyardMessage(displayingCard));
+            });
+            
         }
     
     
