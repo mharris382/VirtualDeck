@@ -12,10 +12,10 @@ public class DeckManager : MonoBehaviour
     public int drawAmount = 5;
 
 
-    [ChildGameObjectsOnly] [Required]  public Transform handParent;
-    [ChildGameObjectsOnly] [Required]  public Transform drawPileParent;
-    [ChildGameObjectsOnly] [Required]  public Transform discardPileParent;
-    [ChildGameObjectsOnly] [Required] public Transform gravehardParent;
+    [ChildGameObjectsOnly] [Required] public Transform handParent;
+    [ChildGameObjectsOnly] [Required] public Transform drawPileParent;
+    [ChildGameObjectsOnly] [Required] public Transform discardPileParent;
+    [ChildGameObjectsOnly] [Required] public Transform graveyardParent;
     
     public Deck deck;
     public GameManager gm;
@@ -25,6 +25,7 @@ public class DeckManager : MonoBehaviour
     private Hand _hand;
     private DiscardPile _discard;
     private Graveyard _graveyard;
+    
 
     public void NextTurn()
     {
@@ -36,19 +37,21 @@ public class DeckManager : MonoBehaviour
     }
 
 
+    void InitPiles()
+    {
+        _discard = new DiscardPile(discardPileParent);
+        _hand = new Hand(handParent, _discard);
+        _draw = new DrawPile(drawPileParent, _discard, _hand);
+        _graveyard = new Graveyard(graveyardParent);
+
+        MessageBroker.Default.Receive<AddCardToHandMessage>().Subscribe(t => { _hand.Add(t.card); });
+        MessageBroker.Default.Receive<AddCardToDiscardPileMessage>().Subscribe(t => { _discard.Add(t.card); });
+        MessageBroker.Default.Receive<AddCardToGraveyardMessage>().Subscribe(t => { _graveyard.Add(t.card); });
+    }
+    
+    
     public void InitializeDeck(GameManager gameManager)
     {
-        void InitPiles()
-        {
-            _discard = new DiscardPile(discardPileParent);
-            _hand = new Hand(handParent, _discard);
-            _draw = new DrawPile(drawPileParent, _discard, _hand);
-            _graveyard = new Graveyard(gravehardParent);
-            
-            MessageBroker.Default.Receive<AddCardToHandMessage>().Subscribe(t => { _hand.Add(t.card); });
-            MessageBroker.Default.Receive<AddCardToDiscardPileMessage>().Subscribe(t => { _discard.Add(t.card); });
-            MessageBroker.Default.Receive<AddCardToGraveyardMessage>().Subscribe(t => { _graveyard.Add(t.card);});
-        }
         
         this.gm = gameManager;
         InitPiles();
@@ -56,33 +59,18 @@ public class DeckManager : MonoBehaviour
         for (int i = 0; i < deck.Cards.Count; i++)
         {
             var instance = new CardInstance.Factory(this.deck).CreateCardInstance(i);
-            _discard.Add(instance);
+            _draw.Add(instance);
         }
     }
+    
 
-    private event Action @event;
-
-    IEnumerator DoStuff()
-    {
-        void Foo()
-        {
-            //DOO STUFF
-        }
-
-        @event += Foo;
-        yield return new WaitForSeconds(5);
-        @event -= Foo;
-    }
-
- 
     public void TryDrawCard()
     {
         if (_draw.Count == 0)
         {
             // _draw.AddRange(_discard);
             List<CardInstance> children = new List<CardInstance>(discardPileParent.GetComponentsInChildren<CardInstance>());
-            foreach (var child in children)
-            {
+            foreach (var child in children) {
                 child.transform.parent = drawPileParent;
             }
             _draw.Shuffle();
@@ -119,9 +107,9 @@ public class DeckManager : MonoBehaviour
         }
     }
     
-
-
     
 }
+
+
 
 

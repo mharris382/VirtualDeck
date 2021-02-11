@@ -45,11 +45,15 @@ namespace View
                 Debug.LogError("No Discard Button On Card");
                 return;
             }
-            discardButton.onClick.AddListener(() =>
+
+            if (discardButton)
             {
-                MessageBroker.Default.Publish(new CardPlayedMessage(displayingCard));
-                MessageBroker.Default.Publish(new AddCardToDiscardPileMessage(displayingCard));
-            });
+                discardButton.onClick.AddListener(() =>
+                {
+                    MessageBroker.Default.Publish(new CardPlayedMessage(displayingCard));
+                    MessageBroker.Default.Publish(new AddCardToDiscardPileMessage(displayingCard));
+                });
+            }
             if (destroyButton)
             {
                 destroyButton.onClick.AddListener(() =>
@@ -63,6 +67,6 @@ namespace View
             
         }
     
-    
+        
     }
 }

@@ -20,7 +20,7 @@ public class CardInstance : MonoBehaviour
     
     
     
-    public class Factory
+    public class Factory : ICardInstanceFactory
     {
         private Deck deck;
 
