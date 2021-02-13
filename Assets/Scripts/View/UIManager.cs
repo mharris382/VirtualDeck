@@ -17,12 +17,13 @@ public class UIManager : MonoBehaviour
 
     public List<CardView> currentHand;
 
-
+    private IDisposable disposable;
     private Dictionary<CardInstance, CardView> viewTables = new Dictionary<CardInstance, CardView>();
 
 
     private void Awake()
     {
+        var cp = new CompositeDisposable();
         MessageBroker.Default.Receive<AddCardToHandMessage>().Subscribe(c =>
         {
             var card = c.card;
@@ -32,7 +33,7 @@ public class UIManager : MonoBehaviour
                 RemoveCardView(viewTables[card]);
 
             viewTables.AddOrReplace(card, view);
-        });
+        }).AddTo(cp);
 
         MessageBroker.Default.Receive<AddCardToDiscardPileMessage>().Subscribe(d =>
         {
@@ -52,7 +53,18 @@ public class UIManager : MonoBehaviour
                     }
                 }
             }
-        });
+        }).AddTo(cp);
+        this.disposable = cp;
+    }
+
+    private void OnDestroy()
+    {
+        this.disposable?.Dispose();
+    }
+
+    private void OnApplicationQuit()
+    {
+        this.disposable?.Dispose();
     }
 
     private CardView GetView(CardInstance card)

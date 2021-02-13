@@ -14,11 +14,11 @@ public class ConfirmationScreen : MonoBehaviour
 
     private IObservable<bool> userChoice;
     private CompositeDisposable lastDialogue;
-
+    private IDisposable disposable;
     private void Awake()
     {
         userChoice = yesButton.OnClickAsObservable().Select(t => true).Merge(noButton.OnClickAsObservable().Select(t => false)).Where(t => enabled);
-    }
+        }
 
 
     public virtual void DisplayPrompt(string prompt)

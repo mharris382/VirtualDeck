@@ -24,8 +24,12 @@ public class GameLoader : SingletonBase<GameLoader>
     [ShowInInspector] private Dictionary<string, Sprite> loadedSprites = new Dictionary<string, Sprite>();
 
 
-    
-    
+    private void OnApplicationQuit()
+    {
+        _onLoadCallbacks.Clear();
+        loadedSprites.Clear();
+        loadingFinished = false;
+    }
 
     public static void RegisterForAssetLoad(string asset, Action<Sprite> callback)
     {

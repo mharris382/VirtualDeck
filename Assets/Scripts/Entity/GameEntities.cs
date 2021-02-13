@@ -40,7 +40,7 @@ namespace Entity
                 entity.Stats = CreateNewStatsTableInstance(entity.name);
             }
         }
-
+    
 
         
         

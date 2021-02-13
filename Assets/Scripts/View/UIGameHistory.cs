@@ -14,11 +14,11 @@ public class UIGameHistory : MonoBehaviour
 
     private void Awake()
     {
-        MessageBroker.Default.Receive<NewTurnMessage>().Subscribe(_ =>
+        MessageBroker.Default.Receive<NewTurnMessage>().TakeUntilDestroy(this).Subscribe(_ =>
         {
             LogNewTurn();
         });
-        MessageBroker.Default.Receive<CardPlayedMessage>().Subscribe(t =>
+        MessageBroker.Default.Receive<CardPlayedMessage>().TakeUntilDestroy(this).Subscribe(t =>
         {
             LogCardPlayed(t.CardInstance);
         });

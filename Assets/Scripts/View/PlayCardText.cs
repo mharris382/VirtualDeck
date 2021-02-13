@@ -15,12 +15,12 @@ public class PlayCardText : MonoBehaviour
     private void Awake()
     {
         text = GetComponent<TextMeshProUGUI>();
-        MessageBroker.Default.Receive<NewTurnMessage>().AsUnitObservable().Subscribe(_ =>
+        MessageBroker.Default.Receive<NewTurnMessage>().TakeUntilDestroy(this).AsUnitObservable().Subscribe(_ =>
         {
             text.text = "";
         });
 
-        MessageBroker.Default.Receive<CardPlayedMessage>().Subscribe(c =>
+        MessageBroker.Default.Receive<CardPlayedMessage>().TakeUntilDestroy(this).Subscribe(c =>
         {
             var n = c.CardInstance.Card.name;
          

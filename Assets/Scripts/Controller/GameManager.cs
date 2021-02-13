@@ -36,6 +36,11 @@ public class GameManager : MonoBehaviour
         cardTable = new Dictionary<string, Card>();
     }
 
+    public void OnApplicationQuit()
+    {
+        cardTable.Clear();
+    }
+
     public void StartGame()
     {
         

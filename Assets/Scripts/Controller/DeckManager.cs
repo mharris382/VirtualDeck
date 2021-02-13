@@ -44,9 +44,9 @@ public class DeckManager : MonoBehaviour
         _draw = new DrawPile(drawPileParent, _discard, _hand);
         _graveyard = new Graveyard(graveyardParent);
 
-        MessageBroker.Default.Receive<AddCardToHandMessage>().Subscribe(t => { _hand.Add(t.card); });
-        MessageBroker.Default.Receive<AddCardToDiscardPileMessage>().Subscribe(t => { _discard.Add(t.card); });
-        MessageBroker.Default.Receive<AddCardToGraveyardMessage>().Subscribe(t => { _graveyard.Add(t.card); });
+        MessageBroker.Default.Receive<AddCardToHandMessage>().TakeUntilDestroy(this).Subscribe(t => { _hand.Add(t.card); });
+        MessageBroker.Default.Receive<AddCardToDiscardPileMessage>().TakeUntilDestroy(this).Subscribe(t => { _discard.Add(t.card); });
+        MessageBroker.Default.Receive<AddCardToGraveyardMessage>().TakeUntilDestroy(this).Subscribe(t => { _graveyard.Add(t.card); });
     }
     
     

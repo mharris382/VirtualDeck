@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using TMPro;
@@ -14,6 +15,16 @@ public class MessageLog : MonoBehaviour
 
 
     Queue<TextMeshProUGUI> activeLogs = new Queue<TextMeshProUGUI>();
+
+    public void OnAwake()
+    {
+        activeLogs = new Queue<TextMeshProUGUI>();
+    }
+    
+    private void OnApplicationQuit()
+    {
+        activeLogs.Clear();
+    }
 
     public void LogMessage(string msg)
     {

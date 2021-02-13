@@ -26,18 +26,23 @@ public class ConsoleInputField : MonoBehaviour
 
     [FoldoutGroup("Events")] public UnityEvent onOpenedConsole;
     [FoldoutGroup("Events")] public UnityEvent onClosedConsole;
-    
+
+    private IDisposable disposable;
     private bool _allowInput;
 
     private void Awake()
     {
-        
+       var cp = new CompositeDisposable(); 
         inputField.onValueChanged.AddListener(OnConsoleChanged);
         inputField.onSubmit.AddListener(OnSubmitPressed);
-        onOpenedConsole.AddListener(() =>
-        {
-            
-        });
+    }
+    
+    
+     private void OnApplicationQuit()
+    {
+        this.disposable?.Dispose();
+        inputField.onValueChanged.RemoveListener(OnConsoleChanged);
+        inputField.onSubmit.AddListener(OnSubmitPressed);
     }
 
     private void Start()
