@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 
 namespace Entity
@@ -15,6 +16,7 @@ namespace Entity
         private void Awake()
         {
             Initialize();
+            
         }
 
         public void Initialize()
@@ -23,7 +25,7 @@ namespace Entity
             {
                 string name = entity.name.ToLower();
                 entityLookup.Add(name, entity);
-                foreach (var shorthand in entity.shorthands)
+                foreach (var shorthand in entity.Abbreviations)
                 {
                     if (entityLookup.ContainsKey(shorthand))
                     {
@@ -52,12 +54,14 @@ namespace Entity
         }
 
 
+        
         public bool TryParseOperation(string operation)
         {
-            var lexemes = operation.Split(' ', '.', '+', '-', '*', '=', '/').ToList();
+            
+            
+            var lexemes = operation.Split( '.', '+', '-', '*', '=', '/', ' ').ToList();
             string entityName = lexemes[0];
-
-          
+            
             if (entityLookup.ContainsKey(entityName) == false) {
                 Debug.LogError($"Entity Named {entityName} Not Found!");
                 return false;
@@ -74,7 +78,7 @@ namespace Entity
             }
 
             
-            var mathOp =operation.Substring(entityName.Length + statName.Length + 1);
+            var mathOp =operation.Substring(entityName.Length + statName.Length + 1).Replace(" ", "");
             if (!Int32.TryParse(mathOp.Substring(1), out int number))
             {
                 Debug.LogError($"Couldn't parse the string <b>{mathOp.Substring(1)}</b> to an integer");

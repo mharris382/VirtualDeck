@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class QuitApplication : MonoBehaviour
 {
-
+    public ConfirmationScreen confirmationScreen;
     public void ExitApp()
     {
-        Application.Quit();
+        confirmationScreen.ShowDialogue(Application.Quit);
     }
 }

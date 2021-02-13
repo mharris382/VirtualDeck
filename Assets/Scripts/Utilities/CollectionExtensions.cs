@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 public static class CollectionExtensions
@@ -18,6 +19,20 @@ public static class CollectionExtensions
         }
 
         if (end != null) sb.Append(end);
+        return sb.ToString();
+    }
+
+    public static string AsRegExPickOne(this IEnumerable<string> collection)
+    {
+        var sb = new StringBuilder();
+        sb.Append('[');
+        foreach (var n in collection)
+        {
+            sb.Append($"({n})|");
+        }
+
+        sb.Remove(sb.Length - 1, 1);
+        sb.Append(']');
         return sb.ToString();
     }
 }

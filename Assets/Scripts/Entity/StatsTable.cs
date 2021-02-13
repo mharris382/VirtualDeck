@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using UnityEngine;
 
 namespace Entity
@@ -28,6 +29,17 @@ namespace Entity
         {
             int index = StatDatabase.GetStatID(statAbbreviation);
             stats[index] = value;
+        }
+        
+        
+        public string GetStatsString()
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < stats.Length; i++)
+            {
+                sb.AppendLine($"{StatDatabase.GetStatName(i)}: {stats[i]}");
+            }
+            return sb.ToString();
         }
     }
 

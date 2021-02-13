@@ -20,7 +20,7 @@ namespace Entity
 
 
         [OnValueChanged("Reset")] [SerializeField]
-        private StatID[] statIds =
+        public StatID[] statIds =
         {
                 new StatID() {id = 0, name = "Health", abbreviation = "hp"},
                 new StatID() {id = 1, name = "Speed", abbreviation = "spd"},

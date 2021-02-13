@@ -33,7 +33,7 @@ public class TestEntities
     {
         var entity = ScriptableObject.CreateInstance<Entity.Entity>();
         entity.name = "Player1";
-        entity.shorthands = new []{"P1", "p1"};
+        entity.SetAbbreviations(new []{"P1", "p1"});
 
         string statTarget = "hp";
         
@@ -72,7 +72,7 @@ public class TestEntities
     {
         var entity = ScriptableObject.CreateInstance<Entity.Entity>();
         entity.name = "Player1";
-        entity.shorthands = new []{"P1", "p1"};
+        entity.SetAbbreviations(new []{"P1", "p1"});
         string statTarget = "hp";
         
         InitTestEntities(entity);
@@ -93,7 +93,7 @@ public class TestEntities
     {
         var entity = ScriptableObject.CreateInstance<Entity.Entity>();
         entity.name = "Player1";
-        entity.shorthands = new []{"P1", "p1"};
+        entity.SetAbbreviations(new []{"P1", "p1"});
         string statTarget = "hp";
         InitTestEntities(entity);
         TestMathOperationOnStat(entity, statTarget, '-', (a, b) => a - b);
@@ -104,7 +104,7 @@ public class TestEntities
     {
         var entity = ScriptableObject.CreateInstance<Entity.Entity>();
         entity.name = "Player1";
-        entity.shorthands = new []{"P1", "p1"};
+        entity.SetAbbreviations(new []{"P1", "p1"});
         string statTarget = "hp";
         InitTestEntities(entity);
         TestMathOperationOnStat(entity, statTarget, '*', (a, b) => a * b);

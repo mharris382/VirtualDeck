@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using System.Text;
 using UnityEngine;
 
 namespace Entity
@@ -6,18 +8,25 @@ namespace Entity
     [CreateAssetMenu(menuName = "Create New Entity")]
     public class Entity : ScriptableObject
     {
-        public string[] shorthands;
+        [SerializeField]
+        private string[] abbreviations;
 
+        public string[] Abbreviations => abbreviations.ToArray();
+
+        public void SetAbbreviations(string[] abbrevs)
+        {
+            this.abbreviations = abbrevs;
+        }
 
         public int this[string abbreviation]
         {
             get => GetStatValue(abbreviation);
             set => SetStatValue(abbreviation, value);
         }
-        internal StatsTable Stats
+        public StatsTable Stats
         {
             get;
-            set;
+            internal set;
         }
 
         public int GetStatValue(string statAbbreviation)
@@ -34,6 +43,17 @@ namespace Entity
         {
             if(!HasStat(statAbbreviation))throw new FormatException($"Invalid Stat: {statAbbreviation}");
             Stats[statAbbreviation] = value;
+        }
+
+        public override string ToString()
+        {
+            return $"{name}\n{Stats.GetStatsString()}";
+        }
+
+
+        public bool IsInitialized()
+        {
+            return Stats != null;
         }
     }
 }
