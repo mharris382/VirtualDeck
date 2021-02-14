@@ -37,7 +37,6 @@ namespace View
             }
         }
 
-
         private void Awake()
         {
             if (discardButton == null)
@@ -46,6 +45,7 @@ namespace View
                 return;
             }
 
+            
             if (discardButton)
             {
                 discardButton.onClick.AddListener(() =>
@@ -66,7 +66,18 @@ namespace View
             
             
         }
-    
-        
+
+        private void OnApplicationQuit()
+        {
+            if (destroyButton)
+            {
+                destroyButton.onClick.RemoveAllListeners();
+            }
+
+            if (discardButton)
+            {
+                discardButton.onClick.RemoveAllListeners();
+            }
+        }
     }
 }
