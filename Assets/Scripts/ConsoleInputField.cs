@@ -51,12 +51,6 @@ public class ConsoleInputField : MonoBehaviour
         string stats = StatDatabase.Instance.statIds.Select(t => t.abbreviation).AsRegExPickOne();
         inputField.characterValidation = TMP_InputField.CharacterValidation.Regex;
         _allowInput = true;
-        // var regex = inputField.GetType().GetField("m_RegexValue").GetMemberValue(inputField) as string;
-        // regex = regex.Replace("ENTITIES", entities);
-        // regex = regex.Replace("STATS", stats);
-        // string regex = String.Format(@"^{0}.{1}(\s?)[\-+*\/=](\s?)\d+", entities, stats);
-        // inputField.GetType().GetField("m_RegexValue", BindingFlags.NonPublic|BindingFlags.Instance).SetMemberValue(inputField, regex);
-
     }
 
 
@@ -102,7 +96,7 @@ public class ConsoleInputField : MonoBehaviour
             return false;
         }
 
-        return false;
+        return true;
     }
 
     private void MoveHistoryCounterUp()

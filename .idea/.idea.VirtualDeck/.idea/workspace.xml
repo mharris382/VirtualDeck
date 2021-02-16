@@ -20,37 +20,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef19ef2b-f94e-4ae6-861c-fd92812aa964" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/Entity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/Entity.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/GameEntities.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/GameEntities.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/StatDatabase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/StatDatabase.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/StatsTable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/StatsTable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/EditModeTests/TestDeckManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/EditModeTests/TestDeckManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/EditModeTests/TestEntities.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/EditModeTests/TestEntities.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VirtualDeck/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VirtualDeck/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VirtualDeck/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VirtualDeck/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VirtualDeck/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VirtualDeck/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/Windows/addressables_content_state.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/Windows/addressables_content_state.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/ART_FALLBACK.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/ART_FALLBACK.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/black-hand-shield.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/black-hand-shield.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/fire-breath.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/fire-breath.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/fire-dash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/fire-dash.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/fire-silhouette.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/fire-silhouette.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/ghost-ally.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/ghost-ally.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/gooey-molecule.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/gooey-molecule.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/half-heart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/half-heart.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/hypersonic-melon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/hypersonic-melon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/peach.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/peach.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/raspberry.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/raspberry.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/skull-staff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/skull-staff.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/slalom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/slalom.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/spider-mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/spider-mask.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/stiletto.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/stiletto.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/strawberry.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/strawberry.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/vomiting.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/vomiting.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controller/DeckManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controller/DeckManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/CardContainers/Graveyard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/CardContainers/Graveyard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game.asmdef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Messages/CardPlayedMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Messages/CardPlayedMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Messages/CardWasAddedToGraveyardMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Messages/CardWasAddedToGraveyardMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Messages/NewTurnMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Messages/NewTurnMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Proxy/CardInstance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Proxy/CardInstance.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/EditModeTests/EditModeTests.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/EditModeTests/EditModeTests.asmdef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/EditModeTests/TestData/TestCardDatabase.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/EditModeTests/TestData/TestCardDatabase.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/View/CardView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/View/CardView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ConsoleInputField.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ConsoleInputField.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +68,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.1/Scripts/Runtime/TMP_InputValidator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ConsoleInputField.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Program Files/Unity/Hub/Editor/2020.2.0f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Program Files/Unity/Hub/Editor/2020.2.0f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventData/BaseEventData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.1/Scripts/Runtime/TMP_InputField.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tests/EditModeTests/EditModeTestingResources.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -75,25 +87,37 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Proxy/ICardInstance.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/Card.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/SingletonBase.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controller/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/Elements.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/ExcelDatabaseParser.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controller/GameLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Messages/NewTurnMessage.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/View/CardView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Proxy/CardInstance.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Messages/CardWasAddedToGraveyardMessage.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Messages/CardPlayedMessage.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tests/EditModeTests/TestingResources.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tests/EditModeTests/EditModeTestingResources.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controller/DeckManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/CardContainers/Graveyard.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tests/EditModeTests/TestDeckManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entity/StatsTable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entity/StatDatabase.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Entity/GameEntities.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Entity/Entity.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/CollectionExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tests/EditModeTests/TestEntities.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Entity/Entity.cs" />
+        <option value="$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.1/Scripts/Runtime/TMP_InputField.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/ConfirmationScreen.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/View/UIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MessageLog.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Entity/GameEntities.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/QuitApplication.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controller/DeckManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controller/GameLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controller/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/View/UIPileCount.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/View/UIGameHistory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/View/PlayCardText.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/View/CardView.cs" />
+        <option value="$PROJECT_DIR$/Assets/EntityUIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Entity/EntityView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ConsoleInputField.cs" />
       </list>
     </option>
   </component>
@@ -153,6 +177,11 @@
       <updated>1612569148030</updated>
       <workItem from="1612569151307" duration="16164000" />
       <workItem from="1612746650505" duration="1219000" />
+      <workItem from="1613087782155" duration="13149000" />
+      <workItem from="1613147922969" duration="1710000" />
+      <workItem from="1613172677185" duration="4413000" />
+      <workItem from="1613283431137" duration="872000" />
+      <workItem from="1613347137966" duration="2237000" />
     </task>
     <servers />
   </component>
@@ -181,17 +210,40 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="670" y="198" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1612593680488" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1613023658908">
+    <state x="807" y="433" key="VCS.ChangelistChooser" timestamp="1613094009000">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1613023658908" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1613076374646">
+    <state x="807" y="433" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1613094009000" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1613105077801">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613076374646" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1613077284374">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1613105077801" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1613438437874">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613077284374" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613438437874" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1613175092644">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613175092644" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.1/Scripts/Runtime/TMP_InputField.cs</url>
+          <line>1921</line>
+          <properties documentPath="C:\Unity Projects\VirtualDeck\Library\PackageCache\com.unity.textmeshpro@3.0.1\Scripts\Runtime\TMP_InputField.cs" initialLine="1921">
+            <startOffsets>
+              <option value="69105" />
+            </startOffsets>
+            <endOffsets>
+              <option value="69106" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
