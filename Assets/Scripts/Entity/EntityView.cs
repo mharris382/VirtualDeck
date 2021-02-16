@@ -20,9 +20,8 @@ namespace Entity
 
         public TMPro.TextMeshProUGUI speedText;
         public TMPro.TextMeshProUGUI defenseText;
-        
-        
 
+    
         private void OnEnable()
         {
             if (entity != null && entity.IsInitialized())
