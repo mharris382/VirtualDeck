@@ -25,3 +25,7 @@ MonoBehaviour:
     name: Defense
     abbreviation: def
     defaultValue: 0
+  - id: 0
+    name: Max Health
+    abbreviation: max_hp
+    defaultValue: 10

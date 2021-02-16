@@ -76,7 +76,7 @@ namespace View
 
             if (discardButton)
             {
-                discardButton.onClick.RemoveAllListeners();
+                discardButton.onClick.RemoveAllListeners();    
             }
         }
     }
