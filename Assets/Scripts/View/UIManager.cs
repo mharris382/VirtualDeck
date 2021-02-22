@@ -57,15 +57,9 @@ public class UIManager : MonoBehaviour
         this.disposable = cp;
     }
 
-    private void OnDestroy()
-    {
-        this.disposable?.Dispose();
-    }
+    private void OnDestroy() => this.disposable?.Dispose();
 
-    private void OnApplicationQuit()
-    {
-        this.disposable?.Dispose();
-    }
+    private void OnApplicationQuit() => this.disposable?.Dispose();
 
     private CardView GetView(CardInstance card)
     {

@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
 
 
     public Card[] cards;
-    public UIManager ui;
     private Elements elements = new Elements();
     private Dictionary<string, Card> cardTable;
 

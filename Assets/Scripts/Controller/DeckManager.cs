@@ -20,11 +20,11 @@ public class DeckManager : MonoBehaviour
     public Deck deck;
     public GameManager gm;
 
-    //created by self
-    private DrawPile _draw;
-    private Hand _hand;
-    private DiscardPile _discard;
-    private Graveyard _graveyard;
+    
+    private DrawPile _draw;          //created by self in InitPiles()
+    private Hand _hand;              //created by self in InitPiles()
+    private DiscardPile _discard;    //created by self in InitPiles()
+    private Graveyard _graveyard;    //created by self in InitPiles()
     
 
     public void NextTurn()
@@ -35,32 +35,35 @@ public class DeckManager : MonoBehaviour
             TryDrawCard();
         }
     }
-
-
-    void InitPiles()
-    {
-        _discard = new DiscardPile(discardPileParent);
-        _hand = new Hand(handParent, _discard);
-        _draw = new DrawPile(drawPileParent, _discard, _hand);
-        _graveyard = new Graveyard(graveyardParent);
-
-        MessageBroker.Default.Receive<AddCardToHandMessage>().TakeUntilDestroy(this).Subscribe(t => { _hand.Add(t.card); });
-        MessageBroker.Default.Receive<AddCardToDiscardPileMessage>().TakeUntilDestroy(this).Subscribe(t => { _discard.Add(t.card); });
-        MessageBroker.Default.Receive<AddCardToGraveyardMessage>().TakeUntilDestroy(this).Subscribe(t => { _graveyard.Add(t.card); });
-    }
     
     
     public void InitializeDeck(GameManager gameManager)
     {
+        void InitCardInstances()
+        {
+            for (int i = 0; i < deck.Cards.Count; i++)
+            {
+                var instance = new CardInstance.Factory(this.deck).CreateCardInstance(i);
+                _draw.Add(instance);
+            }
+        }
+
+        void InitPiles()
+        {
+            _discard = new DiscardPile(discardPileParent);
+            _hand = new Hand(handParent, _discard);
+            _draw = new DrawPile(drawPileParent, _discard, _hand);
+            _graveyard = new Graveyard(graveyardParent);
+
+            MessageBroker.Default.Receive<AddCardToHandMessage>().TakeUntilDestroy(this).Subscribe(t => { _hand.Add(t.card); });
+            MessageBroker.Default.Receive<AddCardToDiscardPileMessage>().TakeUntilDestroy(this).Subscribe(t => { _discard.Add(t.card); });
+            MessageBroker.Default.Receive<AddCardToGraveyardMessage>().TakeUntilDestroy(this).Subscribe(t => { _graveyard.Add(t.card); });
+        }
         
         this.gm = gameManager;
         InitPiles();
         deck.InitGameDeck(gm);
-        for (int i = 0; i < deck.Cards.Count; i++)
-        {
-            var instance = new CardInstance.Factory(this.deck).CreateCardInstance(i);
-            _draw.Add(instance);
-        }
+        InitCardInstances();
     }
     
 
