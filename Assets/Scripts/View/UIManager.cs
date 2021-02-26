@@ -23,19 +23,7 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        var cp = new CompositeDisposable();
-        MessageBroker.Default.Receive<AddCardToHandMessage>().Subscribe(c =>
-        {
-            var card = c.card;
-            var view = GetView(c.card);
-            
-            if (viewTables.ContainsKey(card)) 
-                RemoveCardView(viewTables[card]);
-
-            viewTables.AddOrReplace(card, view);
-        }).AddTo(cp);
-
-        MessageBroker.Default.Receive<AddCardToDiscardPileMessage>().Subscribe(d =>
+        void OnMoveToDiscard(AddCardToDiscardPileMessage d)
         {
             Debug.Log("UI Discard Message");
             if (viewTables.ContainsKey(d.card))
@@ -53,7 +41,22 @@ public class UIManager : MonoBehaviour
                     }
                 }
             }
-        }).AddTo(cp);
+        }
+
+        void OnMoveCardToHand(AddCardToHandMessage c)
+        {
+            var card = c.card;
+            var view = GetView(c.card);
+
+            if (viewTables.ContainsKey(card))
+                RemoveCardView(viewTables[card]);
+
+            viewTables.AddOrReplace(card, view);
+        }
+
+        var cp = new CompositeDisposable();
+        MessageBroker.Default.Receive<AddCardToHandMessage>().Subscribe(OnMoveCardToHand).AddTo(cp);
+        MessageBroker.Default.Receive<AddCardToDiscardPileMessage>().Subscribe(OnMoveToDiscard).AddTo(cp);
         this.disposable = cp;
     }
 
