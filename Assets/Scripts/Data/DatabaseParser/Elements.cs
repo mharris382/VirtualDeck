@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-public class Elements
+public class Elements : IElements
 {
     public const string Title = "Title";
     public const string Description = "Description";
@@ -28,13 +28,15 @@ public class Elements
     };
 
 
-    public enum PropertyType
+    public bool ContainsKey(string propertyName)
     {
-        Text,
-        Int,
-        Sprite
+        return elementTypes.ContainsKey(propertyName);
     }
-
+    public PropertyType this[string propertyName]
+    {
+        get => elementTypes[propertyName];
+        set => elementTypes.AddOrReplace(propertyName, value);
+    }
 
     public Elements()
     {
@@ -49,7 +51,6 @@ public class Elements
         foreach (var str in intElementNames)
         {
             elementTypes.Add(str, PropertyType.Int);
-            
         }
 
         foreach (var str in textElementNames)
@@ -65,4 +66,11 @@ public class Elements
     {
         this.elementNames = propertyRow;
     }
+}
+
+public enum PropertyType
+{
+    Text,
+    Int,
+    Sprite
 }

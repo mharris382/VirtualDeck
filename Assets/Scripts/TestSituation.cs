@@ -3,10 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using Excel;
 using UnityEditor;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using UniRx;
 
 public class TestSituation : MonoBehaviour
 {
@@ -27,14 +30,13 @@ public class TestSituation : MonoBehaviour
         var c = value[1];
         int row = ((int) r) - 65;
         int col = Int32.Parse(c.ToString());
-        string s = $"Cell{value} ({row},{col}) = {ws.Rows[col].Cells[row].Text}" ;
+        string s = $"Cell{value} ({row},{col}) = {ws.Rows[col].Cells[row].Text}";
         Debug.Log(s);
     }
 
 
     void Save()
     {
-        
     }
 
     [Button]
@@ -46,17 +48,18 @@ public class TestSituation : MonoBehaviour
             foreach (var row in ws.Rows)
             {
                 int colNum = 0;
-                
+
                 foreach (var cell in row.Cells)
                 {
-                    char colC = (char) (colNum + 65);  
-                    Debug.Log($"Cell({colC},{rowNum+1})" + cell.Text.ToString());
+                    char colC = (char) (colNum + 65);
+                    Debug.Log($"Cell({colC},{rowNum + 1})" + cell.Text.ToString());
                     colNum++;
                 }
 
                 rowNum++;
             }
         }
+
         // var csvReader = new CsvReader(reader);
         // var records = csvReader.GetRecords<Automobile>();
     }
@@ -81,7 +84,8 @@ class AutomobileComment
 enum AutomobileType
 {
     None,
-    Car, 
-    Truck, 
+    Car,
+    Truck,
     Motorbike
 }
+

@@ -4,7 +4,14 @@ using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 
-public class MessageLog : MonoBehaviour
+//TODO: move this to core
+public interface IMessageLog
+{
+    void LogMessage(string msg);
+}
+
+
+public class MessageLog : MonoBehaviour, IMessageLog
 {
     [Required, AssetsOnly] public TextMeshProUGUI msgPrefab;
 

@@ -5,8 +5,13 @@ using UnityEngine;
 
 namespace Entity
 {
+    public interface IEntity
+    {
+        int GetStatValue(string statAbbreviation);
+    }
+
     [CreateAssetMenu(menuName = "Create New Entity")]
-    public class Entity : ScriptableObject
+    public class Entity : ScriptableObject, IEntity
     {
         [SerializeField]
         private string[] abbreviations;

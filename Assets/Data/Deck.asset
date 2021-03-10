@@ -12,20 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c5c7070ebed4075a05301fdbc439884, type: 3}
   m_Name: Deck
   m_EditorClassIdentifier: 
-  excelPath: Assets/Cards.xlsx
+  excelPath: Assets/Cards - Copy.xlsx
   sheet: 1
-  column: 1
+  column: 2
   cardTitleColumn: 0
   cardsInDeck:
-  - cardName: Ghost Clone
-    countInDeck: 4
-  - cardName: Stiletto
+  - cardName: Attack
     countInDeck: 3
-  - cardName: Staff of Death
-    countInDeck: 2
-  - cardName: Piercing Stab
-    countInDeck: 2
-  - cardName: Heal
-    countInDeck: 5
-  - cardName: SpiderMan slays
-    countInDeck: 7
+  - cardName: Defend
+    countInDeck: 3
+  - cardName: Move
+    countInDeck: 3

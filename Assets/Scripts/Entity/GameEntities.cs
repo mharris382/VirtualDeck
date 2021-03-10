@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Entity
 {
@@ -13,37 +14,45 @@ namespace Entity
         
         private Dictionary<string, Entity> entityLookup = new Dictionary<string, Entity>();
 
+        //TODO: EVERYTHING EXCEPT THE TryParseOperation METHOD SHOULD BE MOVED INTO A DEDICATED CONSTRUCTION CLASS SUCH AS DI INSTALLER 
         private void Awake()
         {
             Initialize();
-            
         }
 
+        //TODO: move to installer
         public void Initialize()
         {
-            foreach (var entity in entities)
+            void LogErroneousAbbreviation(string shorthand, Object entity)
             {
-                string name = entity.name.ToLower();
-                entityLookup.Add(name, entity);
+                Debug.LogError($"Shorthand used by entity: {entityLookup[shorthand].name}", entityLookup[shorthand]);
+                Debug.LogError($"Shorthand used by entity: {entity.name}", entity);
+                throw new DuplicateNameException($"Shorthand {shorthand} is used multiple times!");
+            }
+
+            void RecordEntityAbbreviations(Entity entity)
+            {
                 foreach (var shorthand in entity.Abbreviations)
                 {
                     if (entityLookup.ContainsKey(shorthand))
-                    {
-                        Debug.LogError($"Shorthand used by entity: {entityLookup[shorthand].name}", entityLookup[shorthand]);
-                        Debug.LogError($"Shorthand used by entity: {entity.name}", entity);
-                        throw new DuplicateNameException($"Shorthand {shorthand} is used multiple times!");
-                    }
-
-                    entityLookup.Add(shorthand, entity);
+                        LogErroneousAbbreviation(shorthand, entity);
+                    else
+                        entityLookup.Add(shorthand, entity);
                 }
+            }
 
+            foreach (var entity in entities)
+            {
+                entityLookup.Add(entity.name.ToLower(), entity);
+                RecordEntityAbbreviations(entity);
                 entity.Stats = CreateNewStatsTableInstance(entity.name);
             }
         }
-    
 
         
         
+
+
         private StatsTable CreateNewStatsTableInstance(string entityName)
         {
             var go = new GameObject($"{entityName} Stats", typeof(StatsTable));
@@ -55,9 +64,9 @@ namespace Entity
 
 
         
+        //TODO: ewwww this is a god method...
         public bool TryParseOperation(string operation)
         {
-            
             
             var lexemes = operation.Split( '.', '+', '-', '*', '=', '/', ' ').ToList();
             string entityName = lexemes[0];

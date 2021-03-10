@@ -12,7 +12,8 @@ namespace UniRx
     {
         static IEnumerable<IObservable<T>> CombineSources<T>(IObservable<T> first, IObservable<T>[] seconds)
         {
-            yield return first;
+            if(first!=null)
+                yield return first;
             for (int i = 0; i < seconds.Length; i++)
             {
                 yield return seconds[i];

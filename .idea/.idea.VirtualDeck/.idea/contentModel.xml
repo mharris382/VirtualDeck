@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Unity Projects\VirtualDeck" t="IncludeRecursive">
-      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="EntityUIManager.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Sirenix" t="Include">
             <e p="Odin Inspector" t="Include">
@@ -314,6 +312,7 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="ComponentExtensions.cs" t="Include" />
           <e p="ConsoleInputField.cs" t="Include" />
           <e p="Controller" t="Include">
             <e p="DeckManager.cs" t="Include" />
@@ -325,9 +324,42 @@
             <e p="Game.Core.asmdef" t="Include" />
             <e p="QuitApplication.cs" t="Include" />
             <e p="SingletonBase.cs" t="Include" />
+            <e p="Utilities" t="Include">
+              <e p="BeizerController1.cs" t="Include" />
+              <e p="BeizerController2.cs" t="Include" />
+              <e p="CollectionExtensions.cs" t="Include" />
+              <e p="DictionaryExtensions.cs" t="Include" />
+              <e p="TransformAsList.cs" t="Include" />
+            </e>
           </e>
           <e p="Data" t="Include">
             <e p="Card.cs" t="Include" />
+            <e p="CardProperty.cs" t="Include" />
+            <e p="DatabaseParser" t="Include">
+              <e p="Elements.cs" t="Include" />
+              <e p="ExcelDatabaseParser.cs" t="Include" />
+              <e p="ExcelDeckLoader.cs" t="Include" />
+              <e p="ICardDatabaseParser.cs" t="Include" />
+              <e p="IDeckLoader.cs" t="Include" />
+              <e p="IElements.cs" t="Include" />
+            </e>
+            <e p="Deck.cs" t="Include" />
+            <e p="DeckSave.cs" t="Include" />
+            <e p="DeckSaveCard.cs" t="Include" />
+            <e p="ICardFactory.cs" t="Include" />
+          </e>
+          <e p="Entity" t="Include">
+            <e p="Entity.cs" t="Include" />
+            <e p="EntityTestHelper.cs" t="Include" />
+            <e p="EntityUIManager.cs" t="Include" />
+            <e p="EntityView.cs" t="Include" />
+            <e p="GameEntities.cs" t="Include" />
+            <e p="ScrollInt.cs" t="Include" />
+            <e p="StatDatabase.cs" t="Include" />
+            <e p="StatsTable.cs" t="Include" />
+          </e>
+          <e p="EntityConsoleInput.cs" t="Include" />
+          <e p="Game" t="Include">
             <e p="CardContainers" t="Include">
               <e p="CardContainer.cs" t="Include" />
               <e p="DeckLocation.cs" t="Include" />
@@ -336,24 +368,11 @@
               <e p="Graveyard.cs" t="Include" />
               <e p="Hand.cs" t="Include" />
             </e>
-            <e p="CardProperty.cs" t="Include" />
-            <e p="Deck.cs" t="Include" />
-            <e p="DeckSave.cs" t="Include" />
-            <e p="DeckSaveCard.cs" t="Include" />
-            <e p="Elements.cs" t="Include" />
-            <e p="ExcelDatabaseParser.cs" t="Include" />
-            <e p="ExcelDeckLoader.cs" t="Include" />
-            <e p="ICardFactory.cs" t="Include" />
-            <e p="IDeckLoader.cs" t="Include" />
-          </e>
-          <e p="Entity" t="Include">
-            <e p="Entity.cs" t="Include" />
-            <e p="EntityView.cs" t="Include" />
-            <e p="GameEntities.cs" t="Include" />
-            <e p="StatDatabase.cs" t="Include" />
-            <e p="StatsTable.cs" t="Include" />
+            <e p="CardInstance.cs" t="Include" />
+            <e p="ICardInstanceFactory.cs" t="Include" />
           </e>
           <e p="Game.asmdef" t="Include" />
+          <e p="IConsoleCommand.cs" t="Include" />
           <e p="MessageLog.cs" t="Include" />
           <e p="Messages" t="Include">
             <e p="AddCardToDiscardPileMessage.cs" t="Include" />
@@ -364,61 +383,28 @@
             <e p="NewTurnMessage.cs" t="Include" />
             <e p="ReshuffledDeckMessage.cs" t="Include" />
           </e>
-          <e p="Proxy" t="Include">
-            <e p="CardInstance.cs" t="Include" />
-            <e p="ICardInstanceFactory.cs" t="Include" />
-          </e>
           <e p="Tests" t="Include">
             <e p="EditModeTests" t="Include">
               <e p="EditModeTestingResources.cs" t="Include" />
               <e p="EditModeTests.asmdef" t="Include" />
               <e p="TestDeckManager.cs" t="Include" />
-              <e p="TestEntities.cs" t="Include" />
+              <e p="TestMathOperationsOnEntityStats.cs" t="Include" />
             </e>
           </e>
           <e p="TestSituation.cs" t="Include" />
-          <e p="Utilities" t="Include">
-            <e p="CollectionExtensions.cs" t="Include" />
-            <e p="DictionaryExtensions.cs" t="Include" />
-            <e p="TransformAsList.cs" t="Include" />
-          </e>
+          <e p="UIWindowBase.cs" t="Include" />
           <e p="View" t="Include">
             <e p="CardView.cs" t="Include" />
+            <e p="Cells" t="Include">
+              <e p="Cell.cs" t="Include" />
+              <e p="CellManager.cs" t="Include" />
+              <e p="ICellEntity.cs" t="Include" />
+              <e p="TestCellEntity.cs" t="Include" />
+            </e>
             <e p="PlayCardText.cs" t="Include" />
             <e p="UIGameHistory.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
             <e p="UIPileCount.cs" t="Include" />
-          </e>
-        </e>
-        <e p="TextMesh Pro" t="Include">
-          <e p="Fonts" t="Include">
-            <e p="LiberationSans - OFL.txt" t="Include" />
-          </e>
-          <e p="Resources" t="Include">
-            <e p="LineBreaking Following Characters.txt" t="Include" />
-            <e p="LineBreaking Leading Characters.txt" t="Include" />
-          </e>
-          <e p="Shaders" t="Include">
-            <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
-            <e p="TMP_Bitmap-Mobile.shader" t="Include" />
-            <e p="TMP_Bitmap.shader" t="Include" />
-            <e p="TMP_SDF Overlay.shader" t="Include" />
-            <e p="TMP_SDF SSD.shader" t="Include" />
-            <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
-            <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
-            <e p="TMP_SDF-Mobile SSD.shader" t="Include" />
-            <e p="TMP_SDF-Mobile.shader" t="Include" />
-            <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
-            <e p="TMP_SDF-Surface.shader" t="Include" />
-            <e p="TMP_SDF.shader" t="Include" />
-            <e p="TMP_Sprite.shader" t="Include" />
-            <e p="TMPro.cginc" t="Include" />
-            <e p="TMPro_Mobile.cginc" t="Include" />
-            <e p="TMPro_Properties.cginc" t="Include" />
-            <e p="TMPro_Surface.cginc" t="Include" />
-          </e>
-          <e p="Sprites" t="Include">
-            <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
       </e>
@@ -435,7 +421,7 @@
       <e p="UniRx.Examples.csproj" t="IncludeRecursive" />
       <e p="VirtualDeck.sln" t="IncludeFlat" />
     </e>
-    <e p="C:\Users\Admin\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Admin\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_VirtualDeck.-1824287282.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Admin\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Admin\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_VirtualDeck.-1824287282.00" t="ExcludeRecursive" />
   </component>
 </project>

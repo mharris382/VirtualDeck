@@ -6,11 +6,6 @@ using UnityEngine;
 
 namespace Controller
 {
-    public interface ICardDatabaseParser
-    {
-        Card[] ParseCardDatabase();
-    }
-
     public class ExcelDatabaseParser : ICardDatabaseParser
     {
         public string cardLibraryPath;
@@ -57,7 +52,10 @@ namespace Controller
                 var cardProperties = new CardProperty[properties.Length];
                 for (int i = 0; i < cardProperties.Length; i++)
                 {
-                    cardProperties[i] = new CardProperty(){ element = elements.elementNames[i]};
+                    cardProperties[i] = new CardProperty()
+                    {
+                        element = elements.elementNames[i]
+                    };
                     ReadProperty(elements, properties[i], ref cardProperties[i]);
                 }
                 return  new Card(cardProperties.ToArray());
@@ -66,19 +64,19 @@ namespace Controller
             private void ReadProperty(Elements elements , string raw, ref CardProperty property)
             {
                 string elementName = property.element;
-                if (!elements.elementTypes.ContainsKey(elementName))
+                if (!elements.ContainsKey(elementName))
                 {
                     Debug.LogError("Elements Doesn't contain property for element: " + elementName);
                     return;
                 }
                 
-                var type = elements.elementTypes[elementName];
+                var type = elements[elementName];
                 switch (type)
                 {
-                    case Elements.PropertyType.Text:
+                    case PropertyType.Text:
                         property.textValue = raw;
                         break;
-                    case Elements.PropertyType.Int:
+                    case PropertyType.Int:
                         try
                         {
                             property.intValue = Int32.Parse(raw);
@@ -89,7 +87,7 @@ namespace Controller
                             return;
                         }
                         break;
-                    case Elements.PropertyType.Sprite:
+                    case PropertyType.Sprite:
                         property.textValue = raw;
                         property.spriteValue = GameLoader.GetLoadedSprite(raw);
                         // var prop = property;
