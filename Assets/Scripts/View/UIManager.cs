@@ -35,7 +35,7 @@ public class UIManager : MonoBehaviour
                 Card card = d.card.Card;
                 foreach (var cardView in currentHand)
                 {
-                    if (cardView.Card.name == card.name)
+                    if (cardView.Card.Name == card.Name)
                     {
                         Destroy(cardView.gameObject);
                     }

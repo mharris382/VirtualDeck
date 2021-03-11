@@ -15,7 +15,7 @@ public class CardInstance : MonoBehaviour
         this.deck = deck;
         this.indexInDeck = index;
         inited = true;
-        this.name = Card.name;
+        this.name = Card.Name;
     }
     
     

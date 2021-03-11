@@ -101,13 +101,12 @@ MonoBehaviour:
     - Art
     m_MainAsset: {fileID: 2800000, guid: 5e927927fb396ce49bffeea0206c3331, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 5e927927fb396ce49bffeea0206c3331, type: 3}
-  - m_GUID: 15b0b594bf7b3bd42b5ecd35296048c2
-    m_Address: slalom
+  - m_GUID: 6fae6ee6a31808548a6bddd78d9a319f
+    m_Address: Assets/Art/Card Art/molotov.png
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - Art
-    m_MainAsset: {fileID: 2800000, guid: 15b0b594bf7b3bd42b5ecd35296048c2, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 15b0b594bf7b3bd42b5ecd35296048c2, type: 3}
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: bdf95798c03f2a744a61fd7fa03a45f4
     m_Address: spider-mask
     m_ReadOnly: 0

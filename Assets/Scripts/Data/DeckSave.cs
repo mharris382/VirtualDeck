@@ -16,8 +16,8 @@ public class DeckSave
         Dictionary<string, int> cardCount = new Dictionary<string, int>();
         foreach (var card in cards)
         {
-            cardCount.AddIfNotExists(card.name, 0);
-            cardCount[card.name]++;
+            cardCount.AddIfNotExists(card.Name, 0);
+            cardCount[card.Name]++;
         }
         List<DeckSaveCard> save = new List<DeckSaveCard>();
         foreach (var kvp in cardCount)

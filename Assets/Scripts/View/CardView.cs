@@ -23,9 +23,9 @@ namespace View
         {
             this.displayingCard = cardInstance;
             var card = cardInstance.Card;
-            titleText.text = card.name;
-            descriptionText.text = card.description;
-            apText.text = card.ap.ToString();
+            titleText.text = card.Name;
+            descriptionText.text = card.Description;
+            apText.text = card.APCost.ToString();
             try
             {
                 art.sprite = card.Art;

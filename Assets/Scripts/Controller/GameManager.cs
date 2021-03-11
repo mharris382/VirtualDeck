@@ -48,8 +48,8 @@ public class GameManager : MonoBehaviour
 
         foreach (var card in cards)
         {
-            card.Init(); 
-            cardTable.Add(card.name, card);
+            card.CreatePropertyDictionary(); 
+            cardTable.Add(card.Name, card);
         }
         
         Deck.InitializeDeck(this);

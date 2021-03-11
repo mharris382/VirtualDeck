@@ -52,7 +52,7 @@ public class CreationQueue
         CardInstance instance = null;
         foreach (var readyCard in available)
         {
-            if (readyCard.Card.name == cardName)
+            if (readyCard.Card.Name == cardName)
             {
                 instance = readyCard;
                 break;
@@ -61,7 +61,7 @@ public class CreationQueue
 
         if (instance == null)
         {
-            var cardIndex = deck.Cards.FindIndex(t => t.name == cardName);
+            var cardIndex = deck.Cards.FindIndex(t => t.Name == cardName);
             
             if (cardIndex == -1)
                 throw new NullReferenceException($"No card named {cardName} exists!");

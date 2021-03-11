@@ -22,7 +22,7 @@ public class PlayCardText : MonoBehaviour
 
         MessageBroker.Default.Receive<CardPlayedMessage>().TakeUntilDestroy(this).Subscribe(c =>
         {
-            var n = c.CardInstance.Card.name;
+            var n = c.CardInstance.Card.Name;
          
             if (n == lastCardPlayed)
             {
@@ -32,7 +32,7 @@ public class PlayCardText : MonoBehaviour
             else
             {
                 lastCardPlayed = n;
-                msgOG = $"Played <color=red>{c.CardInstance.Card.name}</color> for {c.CardInstance.Card.ap} AP\n\n<b>{c.CardInstance.Card.description}</b>";
+                msgOG = $"Played <color=red>{c.CardInstance.Card.Name}</color> for {c.CardInstance.Card.APCost} AP\n\n<b>{c.CardInstance.Card.Description}</b>";
                 text.text = msgOG;
                 multiple = 1;
             }

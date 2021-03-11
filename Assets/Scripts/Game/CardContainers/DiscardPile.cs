@@ -9,7 +9,7 @@ public class DiscardPile : CardContainer
 
     public override bool Remove(CardInstance item)
     {
-        Debug.Log($"Removed from the Discard {item.Card.name} Pile" );
+        Debug.Log($"Removed from the Discard {item.Card.Name} Pile" );
         return true;
     }
 }

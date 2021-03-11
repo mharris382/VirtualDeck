@@ -27,7 +27,7 @@ public class UIGameHistory : MonoBehaviour
 
     public void LogCardPlayed(CardInstance cardInstance)
     {
-        string s = $"<b><color=green>Played {cardInstance.Card.name}</color> </b>";
+        string s = $"<b><color=green>Played {cardInstance.Card.Name}</color> </b>";
         LogEvent(s);
     }
 

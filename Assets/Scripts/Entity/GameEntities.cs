@@ -81,7 +81,7 @@ namespace Entity
 
             
             
-            if (!entity.HasStat(statName)) {
+            if (!entity.IsStatNameValid(statName)) {
                 Debug.LogError($"Entity does not have stat {statName} or Stat abbreviation does not exist ");
                 return false;
             }
