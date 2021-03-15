@@ -17,6 +17,7 @@ namespace Entity
         public void Construct(int[] stats)
         {
             this.stats = stats;
+                
         }
 
         public int GetStat(string statAbbreviation)
