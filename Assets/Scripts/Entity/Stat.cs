@@ -2,8 +2,23 @@ namespace Entity
 {
     public enum Stat
     {
+        MaxHealth,
+        Health,
+        Speed,
+        SpeedPerTurn,
+        Defense,
+        DefensePerTurn,
+        Position,
+    }
+
+    public enum StatAbbreviations
+    {
+        Mhp,
         Hp,
         Spd,
-        Def
+        Def,
+        Spt,
+        Dpt,
+        Pos,
     }
 }
