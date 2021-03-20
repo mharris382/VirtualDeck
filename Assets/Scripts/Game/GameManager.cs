@@ -5,7 +5,6 @@ using Controller;
 using Excel;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 public class GameManager : MonoBehaviour
 {

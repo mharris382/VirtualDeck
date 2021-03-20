@@ -62,7 +62,6 @@ public class DeckManager : MonoBehaviour
         
         this.gm = gameManager;
         InitPiles();
-        deck.InitGameDeck(gm);
         InitCardInstances();
     }
     

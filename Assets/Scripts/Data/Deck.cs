@@ -28,7 +28,7 @@ public class Deck : ScriptableObject
         cardsInDeck = new ExcelDeckLoader(sheet, column).LoadDeckFromSave(excelPath);
     }
 
-    public void InitGameDeck(GameManager gm)
+    public void InitGameDeck()
     {
         Cards = new List<Card>();
         
@@ -36,7 +36,8 @@ public class Deck : ScriptableObject
         {
             for (int i = 0; i < deckSaveCard.countInDeck; i++)
             {
-                Cards.Add(gm.CreateCopyOf(deckSaveCard.cardName));
+                throw new NotImplementedException("Create Copy of Saved Card for gameplay");
+                //Cards.Add(gm.CreateCopyOf(deckSaveCard.cardName));
             }
         }
     }

@@ -106,7 +106,7 @@ public class GameLoader : SingletonBase<GameLoader>
           }
           Debug.Log("Finished Loading Art Assets!");
           loadingFinished = true;
-          GetComponent<GameManager>().StartGame();
+          gameObject.SendMessage("StartGame", SendMessageOptions.RequireReceiver);
       }
 }
 
