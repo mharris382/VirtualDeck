@@ -14,4 +14,4 @@ format to define new cards
 format to define decks
 | Name of Card | Deck 1      |    ...       | Deck N      |
 | ------------ | ----------- | ------------ | ----------- |  
-| Card X       | # of copies of card X in Deck 1 (int) | ...      | # of copies of card X in Deck 1 (int) |
+| Card X       | # of copies of card X in Deck 1 (int) | ...      | # of copies of card X in Deck N (int) |
