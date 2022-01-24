@@ -12,5 +12,6 @@ format to define new cards
 | name of card      | text description       | Integer     | name of .png file in resources folder            |
 
 format to define decks
-| Name of Card | Deck 1                    |
-| Card X       | # of copies of card X in Deck 1 (int) |
+| Name of Card | Deck 1      |    ...       | Deck N      |
+| ------------ | ----------- | ------------ | ----------- |  
+| Card X       | # of copies of card X in Deck 1 (int) | ...      | # of copies of card X in Deck 1 (int) |
