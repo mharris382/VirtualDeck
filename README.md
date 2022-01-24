@@ -10,3 +10,7 @@ format to define new cards
 | Card Name   | Description | AP (Action Points) | Art  |
 | ----------- | ----------- | ----------- | ----------- |
 | name of card      | text description       | Integer     | name of .png file in resources folder            |
+
+format to define decks
+| Name of Card | Deck 1                    |
+| Card X       | # of copies of card X in Deck 1 (int) |
